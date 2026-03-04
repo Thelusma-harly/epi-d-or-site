@@ -1,32 +1,70 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #C41E3A;
+  --color-brand-blue: #00209F;
+  --color-brand-yellow: #FFD700;
+  
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --animate-reveal: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes reveal {
+    0% { transform: scaleX(0); transformOrigin: left; }
+    100% { transform: scaleX(1); transformOrigin: left; }
+  }
+}
 
 @layer base {
-  :root {
-    --background: #ffffff;
-    --foreground: #111827;
-  }
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }
   body {
-    background-color: var(--background);
-    color: var(--foreground);
-    @apply font-sans antialiased;
+    background-color: white;
+    color: #111827;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-2xl;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
   }
   .btn-primary {
-    @apply bg-brand-red text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-black transition-all duration-300 transform active:scale-95 shadow-xl hover:shadow-brand-red/20;
+    background-color: var(--color-brand-red);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: #000;
+    box-shadow: 0 20px 25px -5px rgba(196, 30, 58, 0.2);
   }
   .btn-outline {
-    @apply border-2 border-white text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-brand-red transition-all duration-300;
+    border: 2px solid white;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-outline:hover {
+    background-color: white;
+    color: var(--color-brand-red);
   }
 }
