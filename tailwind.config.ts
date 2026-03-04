@@ -12,9 +12,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#1d4ed8",
-        cta: "#f59e0b",
+        primary: "#EF4444", // Haitian Red
+        secondary: "#3B82F6", // Haitian Blue
+        accent: "#FBBF24", // Yellow
       },
+      fontFamily: {
+        heading: ["var(--font-heading)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+      }
     },
   },
   plugins: [],
