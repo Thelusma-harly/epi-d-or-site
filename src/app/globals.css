@@ -6,6 +6,9 @@
   --color-brand-blue: #00209F;
   --color-brand-yellow: #FFD700;
   --color-brand-gold: #D4AF37;
+  
+  --font-heading: "Inter", "system-ui", sans-serif;
+  --font-body: "Inter", "system-ui", sans-serif;
 }
 
 @layer base {
@@ -17,12 +20,12 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-red text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all duration-300 transform active:scale-95 shadow-2xl hover:bg-black hover:shadow-brand-red/30 cursor-pointer text-sm;
+    @apply bg-brand-red text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all duration-500 transform active:scale-95 shadow-2xl hover:bg-black hover:shadow-brand-red/40 cursor-pointer text-sm inline-flex items-center justify-center;
   }
   .btn-outline {
-    @apply border-2 border-white text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black cursor-pointer text-sm;
+    @apply border-2 border-white text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all duration-500 hover:bg-white hover:text-black cursor-pointer text-sm inline-flex items-center justify-center;
   }
-  .glass-card {
-    @apply bg-white/70 backdrop-blur-2xl border border-white/30 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)];
+  .glass {
+    @apply bg-white/70 backdrop-blur-3xl border border-white/20;
   }
 }
