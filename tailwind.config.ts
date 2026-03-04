@@ -10,15 +10,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: "#EF4444", // Haitian Red
-        secondary: "#3B82F6", // Haitian Blue
-        accent: "#FBBF24", // Yellow
+        brand: {
+          red: "#C41E3A",
+          blue: "#00209F",
+          yellow: "#FFD700",
+        },
+        surface: "rgba(255, 255, 255, 0.8)",
       },
-      fontFamily: {
-        heading: ["var(--font-heading)", "sans-serif"],
-        body: ["var(--font-body)", "sans-serif"],
+      backgroundImage: {
+        'glass': 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'reveal': 'reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        reveal: {
+          '0%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+          '100%': { transform: 'scaleX(1)', transformOrigin: 'left' },
+        }
       }
     },
   },
